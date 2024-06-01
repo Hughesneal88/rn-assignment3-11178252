@@ -1,107 +1,119 @@
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView, ScrollView, StyleSheet, Text, View, Image, TouchableOpacity, TextInput } from 'react-native';
+import { SearchBar } from './components/searchBar.js';
+import { useState, useEffect } from'react';
+import { Categories } from './components/categories.js';
+import { Header } from './components/header.js';
+import { Tasks } from './components/Tasks.js';
 
 export default function App() {
+  const [searchPhrase, setSearchPhrase] = useState("");
+  const [clicked, setClicked] = useState(false);
+  const taskData = [
+    {
+    id: 1,
+    title: 'Mobile development',
+  },
+  {
+    id: 2,
+    title: 'Web development',
+  },
+  {
+    id: 3,
+    title: 'Push ups',
+  },
+  {
+    id: 4,
+    title: 'UI/UX Design',
+  },
+  {
+    id: 5,
+    title: 'Yoga',
+  }
+  ];
+  const categoriesData = [
+    {
+      id: 1,
+      title: 'Exercise',
+      tasknum: '14',
+      image: require('./assets/exercise.png'),
+    },
+    {
+      id: 2,
+      title: 'Study',
+      tasknum: '14',
+      image: require('./assets/study.png'),
+    },
+    {
+      id: 3,
+      title: 'Eating',
+      image: "",
+      tasknum: '14',
+    },
+  ];
   return (
-    <SafeAreaView>
-      <StatusBar style="auto" />
+    <>
+    <SafeAreaView style={{backgroundColor: '#FBF9F7'}}>
+    <StatusBar style="auto" />
       <ScrollView>
         <View style={styles.container}>
-          <View style={styles.headersectionContainer}>
-            <View style={styles.headersectionHeaderContainer}>
-            <View style={styles.headersectionTitleContainer}>
-              <Text style={styles.headersectionTitle}>Hello, Devs!</Text>
-            </View>
-            <Text style={styles.headersectionDescription}>14 tasks today</Text>
-            </View>
-            <View style={[styles.headersectionImageContainer, {borderRadius: 50}]}>
-              <Image source={require('./assets/person.png')} style={styles.headersectionImage} />
-            </View>
-          </View>
+          <Header />
+        </View>
         <View style={styles.searchBarContainer}>
-          <View style={styles.searchBar}>
-            <TextInput></TextInput>
-          </View>
+          <SearchBar
+              searchPhrase={searchPhrase}
+              setSearchPhrase={setSearchPhrase}
+              clicked={clicked}
+              setClicked={setClicked}
+          />
+          <Image source={require('./assets/Filter.png')} style={styles.searchFilter}/>
         </View>
-        <View style={styles.taskContainer}>
-          <View style={styles.taskHeaderContainer}>
-            {/* <Text style={styles.taskHeader}>Ongoing Tasks</Text> */}
-          </View>
+        <View>
+        <Text style={styles.title}>Categories</Text>
+          <Categories data={categoriesData} />
         </View>
+        <View>
+          <Text style={styles.title}>Ongoing Tasks</Text>
+          <View style={styles.taskContainer}>
+            <Tasks data={taskData} />
+          </View>
       </View>
       </ScrollView>
     </SafeAreaView>
+    </>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-
-    flex: 1,
-    backgroundColor: '#F7F0E8',
-    alignItems: 'center',
-    justifyContent: 'center',
-    maxWidth: '100%',
-    maxHeight: '100%'
-  },
-  headersectionTitleContainer: {
-    flex: 1,
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'flex-start',
-    alignItems: 'center',
-  },
-  headersectionContainer: {
-    marginTop: 60,
-    paddingHorizontal: 24,
-    borderColor: 'black',
-    borderCurve: 'round',
-    borderWidth: 1,
-    borderRadius: 10,
-    padding: 5,
-    backgroundColor: '#F7F0E8',
-    width: "90%",
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-  },
-  headersectionHeaderContainer:{
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'flex-start',
-    width: 150,
-  },
-  headersectionTitle: {
+  title: {
     fontSize: 24,
     fontWeight: '600',
+    padding:10,
+    marginLeft: 20
+  },
+  container: {
+    paddingTop: 60,
     flex: 1,
-    textAlign: 'left',
+    backgroundColor: '#FBF9F7',
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: '100%',
   },
-  headersectionDescription: {
-    marginTop: 8,
-    fontSize: 12,
-    fontWeight: '400',
-    textAlign: 'left',
-  },
-  headersectionImage: {
+    searchFilter:{
       width: 50,
-      height: 50,
-      alignItems: 'center',
-      
-      textAlign: 'right',
+      height: 48,
     },
-    headersectionImageContainer: {
-      width: 100,
-      height: 100,
-      borderRadius: 50,
-      backgroundColor:'white',
-      overflow: 'hidden',
-      marginLeft: 24,
-      width: 50,
-      height: 50,
+    searchBarContainer: {
+      paddingHorizontal: 16,
+      flex:1,
+      flexDirection: 'row',
       alignItems: 'center',
-      
-      textAlign: 'right',
+      backgroundColor: '#FBF9F7',
+      width: "95%",
+      alignItems: 'center',
+    },
+    taskContainer: {
+      // alignItems: 'center',    
+      backgroundColor: '#FBF9F7',
     },
 });
