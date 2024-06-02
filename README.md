@@ -3,9 +3,9 @@
 
 This is a mobile application built with React Native based on the UI given The app consists of two main components: Categories and SearchBar.
 
-###Components
+### Components
 
-####Categories
+#### Categories
 
 The Categories component displays a horizontal list of categories, each represented by a card containing the category title, the number of tasks in that category, and an image. This component is useful for providing a visual overview of the different task categories available in the app.
 
