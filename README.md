@@ -60,19 +60,15 @@ The following React Native components are used in this project:
 Here's a screenshot of the mobile app:
 
 #### **Screenshot 1**
-<div style="height: 300px; width:250px; justify-content-center flex-right">
+<div style="width: 200px; height: 400px; overflow: hidden;">
+  <img src="./screenshots/screenshot1.jpg" alt="Image Description" style="width: 100%; height: 100%; object-fit: cover;">
+</div>
 
-![Screenshot 1](./screenshots/screenshot1.jpg)
-
-
-
-
+<br/>
 
 
 
 
-
-
-
-![Screenshot2](./screenshots/screenshot2.jpg)
+<div style="width: 200px; height: 400px; overflow: hidden; padding-top:10px">
+  <img src="./screenshots/screenshot2.jpg" alt="Image Description" style="width: 100%; height: 100%; object-fit: cover;">
 </div>
