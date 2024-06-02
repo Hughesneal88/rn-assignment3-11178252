@@ -6,7 +6,7 @@ export const Header = () => {
         <View style={styles.headersectionContainer}>
             <View style={styles.headersectionHeaderContainer}>
                 <View style={styles.headersectionTitleContainer}>
-                    <Text style={styles.headersectionTitle}>Hello, Devs!</Text>
+                    <Text style={styles.headersectionTitle}>Hello , Devs!</Text>
                 </View>
                 <Text style={styles.headersectionDescription}>14 tasks today</Text>
             </View>
@@ -24,13 +24,13 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'flex-start',
         alignItems: 'center',
+        margin: 0,
       },
       headersectionContainer: {
         marginTop: 0,
-        padding: 20,
         paddingHorizontal: 24,
         borderCurve: 'round',
-        borderRadius: 10,
+        borderRadius: 0,
         padding: 5,
         backgroundColor: '#FBF9F7',
         width: "90%",
@@ -49,10 +49,12 @@ const styles = StyleSheet.create({
         fontSize: 24,
         fontWeight: '600',
         flex: 1,
+        margin: 0,
         textAlign: 'left',
       },
       headersectionDescription: {
-        marginTop: 8,
+        paddingTop: 0,
+        marginTop: 0,
         fontSize: 12,
         fontWeight: '400',
         textAlign: 'left',

@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
-import { SafeAreaView, ScrollView, StyleSheet, Text, View, Image, TouchableOpacity, TextInput } from 'react-native';
+import { SafeAreaView, View, Image, StyleSheet, Text, TouchableOpacity} from 'react-native';
+import { useState } from 'react';
 import { SearchBar } from './components/searchBar.js';
-import { useState, useEffect } from'react';
 import { Categories } from './components/categories.js';
 import { Header } from './components/header.js';
 import { Tasks } from './components/Tasks.js';
@@ -28,6 +28,46 @@ export default function App() {
   },
   {
     id: 5,
+      title: 'Yoga',
+  },
+  {
+    id: 6,
+    title: 'Yoga',
+  },
+  {
+    id: 7,
+    title: 'Yoga',
+  },
+  {
+    id: 8,
+    title: 'Yoga',
+  },
+  {
+    id: 9,
+    title: 'Yoga',
+  },
+  {
+    id: 10,
+    title: 'Yoga',
+  },
+  {
+    id: 11,
+    title: 'Yoga',
+  },
+  {
+    id: 12,
+    title: 'Yoga',
+  },
+  {
+    id: 13,
+    title: 'Yoga',
+  },
+  {
+    id: 14,
+    title: 'Yoga',
+  },
+  {
+    id: 15,
     title: 'Yoga',
   }
   ];
@@ -50,70 +90,117 @@ export default function App() {
       image: "",
       tasknum: '14',
     },
+    {
+      id: 4,
+      title: 'Drinking',
+      image: "",
+      tasknum: '14',
+    },
+    {
+      id: 5,
+      title: 'Sleeping',
+      image: "",
+      tasknum: '14',
+    },
+    {
+      id: 6,
+      title: 'Weeding',
+      image: "",
+      tasknum: '14',
+    },
+    {
+      id: 7,
+      title: 'Jumping',
+      image: "",
+      tasknum: '14',
+    },
+    {
+      id: 8,
+      title: 'Excercising',
+      image: "",
+      tasknum: '14',
+    },
+    {
+      id: 9,
+      title: 'Eating',
+      image: "",
+      tasknum: '14',
+    }
   ];
   return (
     <>
     <SafeAreaView style={{backgroundColor: '#FBF9F7'}}>
     <StatusBar style="auto" />
-      <ScrollView>
-        <View style={styles.container}>
-          <Header />
-        </View>
-        <View style={styles.searchBarContainer}>
-          <SearchBar
-              searchPhrase={searchPhrase}
-              setSearchPhrase={setSearchPhrase}
-              clicked={clicked}
-              setClicked={setClicked}
-          />
-          <Image source={require('./assets/Filter.png')} style={styles.searchFilter}/>
-        </View>
-        <View>
+      <View style={styles.container}>
+        <Header />
+      </View>
+      <View style={styles.searchBarContainer}>
+        <SearchBar
+            searchPhrase={searchPhrase}
+            setSearchPhrase={setSearchPhrase}
+            clicked={clicked}
+            setClicked={setClicked}
+        />
+        <TouchableOpacity>
+          <Image source={require('./assets/Filter.png')} style={styles.searchFilter} />
+        </TouchableOpacity>
+      </View>
+      <View style={styles.titleContainer}>
         <Text style={styles.title}>Categories</Text>
+        <View style={styles.categoriesContainer}>
           <Categories data={categoriesData} />
         </View>
-        <View>
-          <Text style={styles.title}>Ongoing Tasks</Text>
-          <View style={styles.taskContainer}>
-            <Tasks data={taskData} />
-          </View>
       </View>
-      </ScrollView>
+      <View style={styles.titleContainer}>
+        <Text style={styles.title}>Ongoing Tasks</Text>
+        <View style={styles.tasksContainer}>
+          <Tasks data={taskData} />
+        </View>
+      </View>
     </SafeAreaView>
     </>
   );
 }
 
 const styles = StyleSheet.create({
+  titleContainer: {
+    marginTop: 20,
+  },
   title: {
     fontSize: 24,
     fontWeight: '600',
+    marginTop:10,
     padding:10,
     marginLeft: 20
   },
-  container: {
-    paddingTop: 60,
-    flex: 1,
-    backgroundColor: '#FBF9F7',
+  categoriesContainer: {
+    marginTop: 0,
+  },
+  tasksContainer: {
+    // marginBottom: 10,
+    paddingBottom:50
+  },
+  searchBarContainer: {
+    paddingHorizontal: 16,
+    flex:1,
+    flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: '#FBF9F7',
+    width: "95%",
+    alignItems: 'center',
+  },
+  searchFilter:{
+    width: 50,
+    height: 48,
+  },
+  container: {
+    margin: 10,
+    marginBottom: 10,
+    paddingTop: 70,
+    paddingBottom:20,
+    backgroundColor: '#FBF9F7',
+    // alignItems: 'center',
+    // justifyContent: 'center',
     width: '100%',
   },
-    searchFilter:{
-      width: 50,
-      height: 48,
-    },
-    searchBarContainer: {
-      paddingHorizontal: 16,
-      flex:1,
-      flexDirection: 'row',
-      alignItems: 'center',
-      backgroundColor: '#FBF9F7',
-      width: "95%",
-      alignItems: 'center',
-    },
-    taskContainer: {
-      // alignItems: 'center',    
-      backgroundColor: '#FBF9F7',
-    },
 });
