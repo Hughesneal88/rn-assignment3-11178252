@@ -60,7 +60,7 @@ The following React Native components are used in this project:
 Here's a screenshot of the mobile app:
 
 #### **Screenshot 1**
-<div style="width: 200px; height: 400px; overflow: hidden;">
+<div style="width: 100px; height: 200px; overflow: hidden;">
   <img src="./screenshots/screenshot1.jpg" alt="Image Description" style="width: 100%; height: 100%; object-fit: cover;">
 </div>
 
@@ -69,6 +69,6 @@ Here's a screenshot of the mobile app:
 
 
 
-<div style="width: 200px; height: 400px; overflow: hidden; padding-top:10px">
+<div style="width: 100px; height: 200px; overflow: hidden; padding-top:10px">
   <img src="./screenshots/screenshot2.jpg" alt="Image Description" style="width: 100%; height: 100%; object-fit: cover;">
 </div>
