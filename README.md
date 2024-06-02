@@ -47,13 +47,13 @@ The Tasks component displays a list of tasks, each represented by a card contain
 React Native Components Used
 The following React Native components are used in this project:
 
-`View`: A container for other components.
-`Image`: Displays an image.
-`Text`: Displays text.
-`StyleSheet`: Defines styles for components.
-`FlatList`: Renders a scrolling list of data.
-`TextInput`: Allows user input.
-`TouchableOpacity`: A component that provides a way to handle touch events and provide visual feedback when pressed.
+`View`: A container for other components.\
+`Image`: Displays an image.\
+`Text`: Displays text.\
+`StyleSheet`: Defines styles for components.\
+`FlatList`: Renders a scrolling list of data.\
+`TextInput`: Allows user input.\
+`TouchableOpacity`: A component that provides a way to handle touch events and provide visual feedback when pressed.\
 
 
 ### Screenshots
